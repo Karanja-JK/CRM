@@ -52,3 +52,7 @@ class Order(models.Model):
     date_created = models.DateTimeField(default=timezone.now) 
     status = models.CharField(max_length=200, choices=STATUS)
     
+    # returns name of the order
+    def __str__(self):
+        return self.product.name
+    
